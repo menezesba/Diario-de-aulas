@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Diário de Aulas</title>
   
-  <!-- Configurações para o Atalho de Celular ficarem perfeitas -->
+  <!-- LIGANDO O MANIFESTO PARA INSTALAÇÃO -->
+  <link rel="manifest" href="manifest.json">
+  
   <meta name="theme-color" content="#4338ca">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -13,19 +15,17 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="application-name" content="Diário Aulas">
   
-  <!-- Ícone do Diário -->
   <link rel="icon" type="image/png" sizes="512x512" href="https://img.icons8.com/fluency/512/diary.png">
   <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/512/diary.png">
 
   <style>
-    /* Remove margens e faz o espelho ocupar 100% da tela perfeitamente */
     body, html {
       margin: 0;
       padding: 0;
       width: 100%;
       height: 100%;
-      overflow: hidden; /* Evita que a tela fique com rolagem dupla */
-      background-color: #f8fafc; /* Cor de fundo enquanto o Google carrega */
+      overflow: hidden;
+      background-color: #f8fafc;
     }
     iframe {
       border: none;
@@ -37,8 +37,17 @@
 </head>
 <body>
   
-  <!-- COLE O SEU LINK DO GOOGLE AQUI DENTRO DO src=" " -->
-  <iframe src="https://script.google.com/macros/s/AKfycbxd004C0F26LhWjh700KztXqE0U5ZGJCEmg1r2rEQBgQdNLnoDcGfp7F2VmgUEM6CCs-g/exec"></iframe>
+  <!-- SCRIPT DO SERVICE WORKER PARA PERMITIR INSTALAÇÃO -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js');
+      });
+    }
+  </script>
+
+  <!-- COLE O SEU LINK DO GOOGLE SCRIPT AQUI DENTRO DO src=" " -->
+  <iframe src="COLE_O_SEU_LINK_DO_GOOGLE_SCRIPT_AQUI"></iframe>
 
 </body>
 </html>
