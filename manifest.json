@@ -1,0 +1,16 @@
+{
+  "name": "Diário de Aulas",
+  "short_name": "Diário",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#4338ca",
+  "icons": [
+    {
+      "src": "https://img.icons8.com/fluency/512/diary.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
